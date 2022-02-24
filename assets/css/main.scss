@@ -1,0 +1,139 @@
+:root {
+	--header-height: 65px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+em {
+    word-break: break-all;
+}
+
+html {
+	font-size: 62.5%;
+    // font-family: Helvetica, Arial, sans-serif;
+    font-family: Roboto;
+}
+
+textarea, input { outline: none; }
+
+p {
+    font-size: 1.9rem;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.9rem;
+    color: #2c3e50;
+    font-weight: 400;
+}
+
+.header {
+    height: var(--header-height);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+        height: fit-content;
+        margin-left: 3%;
+
+        h1 {
+            font-size: 2rem;
+            color: rgba(255, 107, 129,1.0);
+            line-height: var(--header-height);
+        }
+    }
+
+    &-nav {
+        display: none;
+        margin-right: 3%;
+        height: 100%;
+
+        @media (min-width: 700px) {
+            display: block;
+        }
+
+        &-list {
+            display: flex;
+            height: 100%;
+
+            li {
+                list-style: none;
+                height: 100%;
+                position: static;
+                border-top: solid 4px white;
+
+                &:hover {
+                    border-top: solid 4px #2c3e50;
+                }
+
+                a {
+                    padding: 0 7.5px;
+                    display: inline-block;
+                    line-height: var(--header-height);
+                    height: 100%;
+                    text-decoration: none;
+                    font-size: 1.6rem;
+                    color: rgba(255, 107, 129,1.0);
+
+                    margin-top: -4px;
+                }
+            }
+        }
+    }
+
+    &-nav_mobile {
+        width: 65px;
+        margin-right: 3%;
+
+        @media (min-width: 700px) {
+            display: none;
+        }
+
+        &-menu_button {
+            color: rgba(255, 107, 129,1.0);
+            cursor: pointer;
+
+            rect {
+                fill: rgba(255, 107, 129,1.0);
+            }
+        }
+    }
+
+}
+
+.header-mobile {
+    position: relative;
+    height: 130px;
+    width: 100%;
+    background: #333;
+    display: none;
+
+    &-nav {
+        width: 100%;
+
+        &-list {
+            li {
+                width: 100%;
+                text-align: center;
+
+                a {
+                    padding: 0 7.5px;
+                    display: inline-block;
+                    line-height: var(--header-height);
+                    height: 100%;
+                    width: 100%;
+                    text-decoration: none;
+                    font-size: 1.8rem;
+                    color: white;
+                }
+            }
+
+        }
+    }
+}

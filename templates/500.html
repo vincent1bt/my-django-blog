@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="error_page">
+            <h3>Sorry, something went wrong</h3>
+            <p>
+                <a href="{% url 'posts:index' %}">return to the main page</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}

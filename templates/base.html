@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    {% block css %}
+    {% endblock %}
+
+    {% block head_javascript %}
+    {% endblock %}
+
+  </head>
+  <body>
+
+    {% include 'header.html' %}
+    
+    {% block content %}
+    {% endblock %}
+
+    <script>
+      const headerButton = document.getElementById("header-button");
+      const mobileHeader = document.getElementById("header-mobile");
+
+      headerButton.addEventListener("click", (e) => {
+        console.log(headerButton.style);
+
+        if (mobileHeader.style.display == "block") {
+          mobileHeader.style.display = "none"
+        } else {
+          mobileHeader.style.display = "block"
+        }
+
+      });
+
+    </script>
+  </body>
+
+  {% block javascript %}
+  {% endblock %}
+</html>

@@ -1,0 +1,14 @@
+<div class="title">
+    <h2>
+        Vicente Rodríguez Blog
+    </h2>
+    <p>
+        Deep Learning, Machine Learning, and Learning
+    </p>
+    <div  class="title-search">
+        <form action="{% url 'posts:search' %}" method="GET">
+            <input type="search" name="search" placeholder="Neural Networks" value="{{ query_string }}">
+            <button>Search</button>
+        </form>
+    </div>
+</div>

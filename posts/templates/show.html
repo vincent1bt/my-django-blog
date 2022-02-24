@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="{% static 'css/show.css' %}">
+{% endblock %}
+
+{% block head_javascript %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+{% endblock %}
+
+{% block content %}
+
+<section class="post_content">
+    <section class="post_content-title">
+        <p>
+            {{ post.created_at }}
+        </p>
+        <h1>
+            {{ post.title }}
+        </h1>
+    </section>
+
+    <section class="post_content-body">
+        {{ post.body | safe }}
+    </section>
+
+</section>   
+{% endblock %}

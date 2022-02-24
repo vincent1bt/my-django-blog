@@ -1,0 +1,166 @@
+:root {
+	--title-color: #2f3640;
+}
+
+.title {
+    width: 95vw;
+    max-width: 1300px;
+    margin: 50px auto;
+    text-align: center;
+
+    @media (min-width: 700px) {
+        width: 90vw;
+    }
+
+    h2 {
+        font-size: 4.3rem;
+        margin-bottom: 5px;
+    }
+
+    &-search {
+        margin-top: 40px;
+        width: 100%;
+
+        form {
+            width: 100%;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input {
+            width: 80%;
+            height: 35px;
+            padding-left: 10px;
+            border-radius: 5px 0 0 5px;
+            border: solid 1px #718093;
+
+            @media (min-width: 700px) {
+                width: 55%;
+            }
+        }
+
+        button {
+            width: 20%;
+            border-radius: 0 5px 5px 0;
+            // border: 0;
+            border: solid 1px rgba(255, 107, 129,1.0);
+            background: rgba(255, 107, 129,1.0);
+            color: white;
+            cursor: pointer;
+
+            @media (min-width: 700px) {
+                width: 10%;
+            }
+        }
+    }
+}
+
+.posts {
+    width: 95vw;
+    max-width: 1600px;
+    margin: 50px auto;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2.5vh;
+
+    @media (min-width: 700px) {
+        width: 90vw;
+    }
+
+    &-item {
+        border-radius: 10px;
+        width: 100vw;
+        background:rgba(245, 246, 250,1.0);
+        transition: background .2s ease-in;
+
+        @media (min-width: 1020px) {
+            // use porcentage to get the width of the PARENT
+            width: calc(50% - 1.25vh);
+        }
+
+        &:hover {
+            background: rgba(255, 107, 129,1.0);
+        }
+
+        &:hover h3 {
+            color: white;
+        }
+
+        &:hover p {
+            color: white;
+        }
+
+        &-link {
+            text-decoration: none;
+            padding: 5px 15px;
+
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                font-size: 2.1rem;
+                margin: 15px 0;
+                color: var(--title-color);
+                transition: color .2s ease-in;
+            }
+    
+            p {
+                margin-bottom: 15px;
+                color: var(--title-color);
+                transition: color .2s ease-in;
+            }
+
+            &-date {
+                font-size: 1.6rem;
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+.pagination {
+    width: 95vw;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    @media (min-width: 700px) {
+        width: 90vw;
+    }
+
+    span {
+        font-size: 1.8rem;
+
+        a {
+            text-decoration: none;
+            color: #ff6b81;
+        }
+    }
+}
+
+.error_page {
+    width: 95vw;
+    max-width: 1600px;
+    margin: 50px auto;
+    margin-bottom: 25px;
+    text-align: center;
+
+
+    h3 {
+        font-size: 3rem;
+        color: var(--title-color);
+    }
+
+    p {
+        margin-top: 15px;
+    }
+
+    a {
+        color: #ff6b81;
+    }
+
+}

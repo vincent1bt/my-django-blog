@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="error_page">
+            <h3>Sorry, the page you were looking for does not exist or is not available</h3>
+            <p>
+                You can search a term or <a href="{% url 'posts:index' %}">return to the main page</a>
+            </p>
+        </div>
+        {% include 'snippets/search_bar.html' %}
+    </section>
+{% endblock %}

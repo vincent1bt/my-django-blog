@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="content">
+    <section class="content-me">
+        <h2>
+            About Me
+        </h2>
+
+        <div class="content-me-links">
+            <div class="content-me-links-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                </svg>
+                <a href="https://twitter.com/vincent1bt">My Twitter Profile</a>
+            </div>
+            <div class="content-me-links-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <a href="https://github.com/vincent1bt">My Github Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-projects">
+       <h2>My Projects</h2>
+
+       <div>
+            <h3>
+                Deep Learning Infrastructure
+            </h3>
+
+            <p>
+                Model serving using cheap instances is addressed in this project. The Publish-Subscribe pattern
+                is used to build the infrastructure around Spot instances to server Deep Learning models. 
+                Celery is the main tool used to implement the Publish-Subscribe pattern.
+                More details about the project are explained in <a href="https://vincentblog.xyz/posts/serving-deep-learning-models-using-the-publish-subscribe-pattern">this blog post</a>.
+            </p>
+
+            <img src="https://res.cloudinary.com/vincent1bt/image/upload/c_scale,w_916/v1643836568/tf_server_app/Screen_Shot_2022-01-30_at_17.15.11.jpg" alt="infrastructure example">
+
+            <p>
+                The Github repository is available <a href="https://github.com/vincent1bt/superresolution-server-a">here</a>.
+            </p>
+
+            <p>Skills used: </p>
+            <ul>
+                <li>System Design knowledge</li>
+                <li>Backend Knowledge (Django, Celery)</li>
+                <li>Data Base Knowledge (Race Condition, Lock/Block Queries, Myqsl)</li>
+                <li>Server Architecture Knowledge (Linux, Google Cloud, Docker)</li>
+                <li>Deep Learning Models Deployment (TensorFlow)</li>
+            </ul>
+
+            <h3>
+                Line Art Colorization Using Deep Learning
+            </h3>
+
+            <p>
+                This project is a model implementation of the paper called <a href="https://arxiv.org/abs/2003.10685">Deep Line Art Video Colorization with a Few References</a>. 
+                This deep learning model takes as input line art images and color images where the latter
+                are used as a reference to colorize the former. More details about the project can be found <a href="https://vincentblog.xyz/posts/line-art-colorization-using-a-deep-learning-model">here</a>.
+            </p>
+
+            <p>
+                Some of the results from the model.
+            </p>
+
+            <img src="https://res.cloudinary.com/vincent1bt/image/upload/c_scale,w_801/v1615692620/Screen_Shot_2021-03-13_at_9.29.17_p.m._bzwswn.jpg" alt="Results">
+
+            <p>
+                The Github repository for the model implementation is available <a href="https://github.com/vincent1bt/line-art-colorization">here</a>. 
+                Additionally, an Electro application built around the model using TensorFlow.JS is available <a href="https://github.com/vincent1bt/Line-art-colorization-electron-app">here</a> and the application details can be found <a href="https://vincentblog.xyz/posts/how-to-create-an-electron-app-to-deploy-tensor-flow-js-models">here</a>.
+            </p>
+
+            <p>Skills used: </p>
+            <ul>
+                <li>Paper Reading</li>
+                <li>Create a Training Workflow</li>
+                <li>Understand how to implement models from papers</li>
+                <li>Training Data Collection and Creation</li>
+                <li>TensorFlow + Javascript (Electron)</li>
+            </ul>
+
+            <h3>
+                Face Detection
+            </h3>
+
+            <p>
+                The idea behind this project is to create a face detection system suitable for mobile devices. Thus
+                the BlazeFace architecture was used to build the model, this model was trained from scratch using the
+                WIDER FACE: A Face Detection Benchmark and the Face Detection Data Set and Benchmark (FDDB) datasets.
+                The data recollection and creation was a crucial point to obtain good results from the model. 
+                The whole journey to train the model can be read in
+                <a href="https://vincentblog.xyz/posts/face-detection-for-low-end-hardware-using-the-blaze-face-architecture">this blog post.</a>
+            </p>
+
+            <p>
+                The Github repository for the model implementation is available
+                <a href="https://github.com/vincent1bt/blazeface-tensorflow">here.</a>
+            </p>
+
+            <p>
+                Two apps for iOS were also created. The first app uses Tensorflow Lite to run the model, and the second app uses CoreML
+            </p>
+
+            <p>Skills used: </p>
+            <ul>
+                <li>Training Data Collection and Creation</li>
+                <li>Create a Training Workflow</li>
+                <li>Model Deployment</li>
+                <li>Swift, iOS applications</li>
+            </ul>
+
+       </div>
+    </section>
+</section>   
+{% endblock %}

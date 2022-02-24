@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        {% include 'snippets/search_bar.html' %}
+        <div class="posts">
+            {% for post in posts %}
+                <div class="posts-item">
+                    <a href="{% url 'posts:show' post.slug %}" class="posts-item-link">
+                        <h3>
+                            {{ post.title }}
+                        </h3>
+                        <p>
+                            {{ post.description }}
+                        </p>
+                        <p class="posts-item-link-date">
+                            {{ post.created_at }}
+                        </p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if posts.has_previous %}
+                    <a href="?search={{query_string}}&page=1">&laquo; First</a> |
+                    <a href="?search={{query_string}}&page={{ posts.previous_page_number }}">Previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+                </span>
+        
+                {% if posts.has_next %}
+                    <a href="?search={{query_string}}&page={{ posts.next_page_number }}">Next</a> |
+                    <a href="?search={{query_string}}&page={{ posts.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </section>
+{% endblock %}
