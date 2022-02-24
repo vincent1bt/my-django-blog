@@ -1,6 +1,5 @@
-pip install wheel==0.37.0
-pip install mysqlclient
-pip install django==3.2
-pip install gunicorn
-pip install markdown
-
+django==3.2.10
+wheel==0.37.0
+mysqlclient==2.1.0
+gunicorn
+markdown
